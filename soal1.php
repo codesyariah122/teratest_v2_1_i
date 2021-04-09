@@ -35,6 +35,7 @@
 					if(isset($_POST['submit1'])):						
 						$baris = $_POST['baris'];
 						$kolom = $_POST['kolom'];
+						if(!empty($baris) || !empty($kolom)):
 					?>
 						<table>
 						<?php for($i=1; $i <=$baris; $i++):?>
@@ -50,6 +51,9 @@
 
 						</table>
 						<button type='submit' name='submit2'>Submit</button>
+						<?php else: ?>
+							<h1>Anda belum mengisi inputan</h1>
+						<?php endif; ?>
 					<?php endif;?>
 				</ul>
 			</form>

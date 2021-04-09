@@ -66,13 +66,19 @@
 					<legend>Result Soal-1</legend>
 					<?php 
 						$input = $_POST['input'];
-						for($i = 1; $i < count($input); $i++){
-							// echo $i.': ';
-							echo $input[$i].'.'.$j;
-							for($j = 1; $j < $i; $j++){
-							}
-						}
-					?>
+						if($input <= 1):
+							echo "<h1>Anda belum mengisi input kedua</h1>";
+						else:
+						?>
+						<ul>	
+						<?php for($i = 0; $i < count($input); $i++):?>
+							<?php echo $input; ?>
+							<?php for($k = 0; $k < $i; $k--): ?>
+								<li><?=$i.$k.': ';?><?=$input[$i]?></li>
+							<?php endfor; ?>
+						<?php endfor;?>
+						</ul>
+						<?php endif;?>
 				</fieldset>
 			<?php endif;?>
 

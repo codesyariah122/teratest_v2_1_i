@@ -44,6 +44,7 @@
 								<td>
 								<label><?=$i.'.'.$j?>: </label>
 								<input type='text' name='input[]'>
+								<input type="hidden" value="<?=$i.'.'.$j?>" name="value[]">
 								<?php // echo $i.$j; ?>
 								</td>
 							<?php endfor;?>
@@ -66,13 +67,15 @@
 					<legend>Result Soal-1</legend>
 					<?php 
 						$input = $_POST['input'];
+						$val = $_POST['value'];
+						// echo count($val);
 						if($input <= 1):
 							echo "<h1>Anda belum mengisi input kedua</h1>";
 						else:
 						?>
 						<ul>	
 						<?php for($i = 0; $i < count($input); $i++):?>
-							<li><?=$i.'<b> : </b>';?><?=$input[$i]?></li>
+							<li><b><?=$val[$i].' : ';?><?=$input[$i]?></b></li>
 						<?php endfor;?>
 						</ul>
 						<?php endif;?>

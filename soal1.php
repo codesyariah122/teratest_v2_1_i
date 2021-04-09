@@ -35,7 +35,7 @@
 					if(isset($_POST['submit1'])):						
 						$baris = $_POST['baris'];
 						$kolom = $_POST['kolom'];
-						if(!empty($baris) || !empty($kolom)):
+						if(!empty($baris) && !empty($kolom)):
 					?>
 						<table>
 						<?php for($i=1; $i <=$baris; $i++):?>
@@ -75,6 +75,11 @@
 						?>
 						<ul>	
 						<?php for($i = 0; $i < count($input); $i++):?>
+							<?php if($input[$i] == ""): ?>
+								<h1>Ulangi lagi</h1>
+								<a href="soal1.php">Ulangi</a>
+								<?php break; ?>
+								<?php endif; ?>
 							<li><b><?=$val[$i].' : ';?><?=$input[$i]?></b></li>
 						<?php endfor;?>
 						</ul>

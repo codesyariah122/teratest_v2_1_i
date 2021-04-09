@@ -72,10 +72,7 @@
 						?>
 						<ul>	
 						<?php for($i = 0; $i < count($input); $i++):?>
-							<?php echo $input; ?>
-							<?php for($k = 0; $k < $i; $k--): ?>
-								<li><?=$i.$k.': ';?><?=$input[$i]?></li>
-							<?php endfor; ?>
+							<li><?=$i.'<b> : </b>';?><?=$input[$i]?></li>
 						<?php endfor;?>
 						</ul>
 						<?php endif;?>

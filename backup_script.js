@@ -1,3 +1,8 @@
+<?php  
+				// $total[$a] = explode(' ', $a);
+				// var_dump($total);
+			?>
+
 <script type="text/javascript">
 		// $(document).ready(function(){
 		// 	$('#form2').hide()
